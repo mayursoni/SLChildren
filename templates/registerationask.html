@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <style >
+
+        .more {
+    display:block;
+    overflow:hidden;
+    padding-bottom: 10px;
+}
+        .navbar-inverse {
+  height: 80px;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 80px;
+}
+
+
+.navbar-inverse .navbar-brand {
+color: #fff;
+  }
+.navbar-brand {
+  font-size: 6rem;
+  font-family: French Script MT;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #E5E5E5;
+  font-size: 2rem;
+}
+
+.copyright {
+    background-color: #f0f0f0;
+}
+.copyright p {
+    font-size: 12px;
+    padding: 15px 0 10px 0;
+}
+.feature-ph {
+   /* width: 150px;
+    margin: 0 auto;
+    height: 135px;*/
+}
+.body {
+	margin-top:  30px;
+}
+
+.btn.btn-hero, .btn.btn-hero:hover, .btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+.btn.btn-lg {
+    padding: 10px 40px;
+}
+</style>
+    </head>
+  <body>    
+
+    
+
+
+
+    <div class="container" style="margin-top: 20px;padding-left: 90px;">
+    	<div class="row">
+    		<h2 style="font-weight: bold;color: blue">Register As:</h2>
+    		<div class="col-md-6 col-sm-6">
+    			<img width="400px" height="400px" src="{{ url_for('static', filename='images/student1.jpg') }}" class="feature-ph" >
+    			<h3 align="center"><strong><a href="{{ url_for('studentregister') }}">STUDENT</a></strong></h3>
+    		</div>
+    		<div class="col-md-6 col-sm-6">
+    			<img width="400px" height="400px" src="{{ url_for('static', filename='images/teacher.jpg') }}" class="feature-ph" >
+    			<h3 style="padding-left: 100px"><strong><a href="{{ url_for('teacherregister') }}">TEACHER</a></strong></h3>
+    		</div>
+    		
+    	</div>
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+     
+  </body>
+</html>  

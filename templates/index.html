@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>SL-CHILDREN: Intelligence for special needs: Visual Learning, Activity Management, Behaviour Control and Social Interaction Development</title>
+<!-- Bootstrap -->
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel='stylesheet' type='text/css' />
+<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+<!-- start plugins -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<!-- start slider -->
+<link href="{{ url_for('static', filename='css/slider.css') }}" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="{{ url_for('static', filename='js/modernizr.custom.28468.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.cslider.js') }}"></script>
+	<script type="text/javascript">
+			$(function() {
+
+				$('#da-slider').cslider({
+					autoplay : true,
+					bgincrement : 450
+				});
+
+			});
+		</script>
+<!-- Owl Carousel Assets -->
+<link href="{{ url_for('static', filename='css/owl.carousel.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/owl.carousel.js') }}"></script>
+		<script>
+			$(document).ready(function() {
+
+				$("#owl-demo").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					autoPlay : true,
+					navigation : true,
+					navigationText : ["", ""],
+					rewindNav : false,
+					scrollPerPage : false,
+					pagination : false,
+					paginationNumbers : false,				})
+
+			});
+		</script>
+		<!-- //Owl Carousel Assets -->
+<!--font-Awesome-->
+   	<link rel="stylesheet" href="{{ url_for('static', filename='fonts/css/font-awesome.min.css') }}">
+<!--font-Awesome-->
+</head>
+<body>
+<div class="header_bg">
+<div class="container">
+	<div class="row header">
+   		<div class="logo navbar-left">
+			<h1><a href="index.html">SL-CHILDREN</a></h1>
+		</div>
+        <div class="col-md-6 content_right">
+				<h4>Intelligence for special needs</h4>
+				
+			</div>
+		<div class="h_search navbar-right">
+			<form>
+				<input type="text" class="text" value="Enter text here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter text here';}">
+				<input type="submit" value="search">
+			</form>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+<div class="container">
+	<div class="row h_menu">
+		<nav class="navbar navbar-default navbar-left" role="navigation">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+		        <li><a href="{{ url_for('learningmenu') }}">Learning</a></li>
+		        <li><a href="{{ url_for('social') }}">Social Interaction</a></li>
+		        <li><a href="{{ url_for('displaystoryvideos') }}">View Stories</a></li>
+		        <li><a href="{{ url_for('displaypuzzles') }}">Puzzle</a></li>
+				  <li><a href="{{ url_for('contact') }}">Contact</a></li>
+              </ul>
+                <ul class="nav navbar-nav navbar-right">
+				  {% if session.login == "false" %}
+				  <li><a href="{{ url_for('login') }}">Login | Register   </a></li>
+				  {%else%}
+					<!--<li><a href="{{ url_for('profile') }}"> Profile</a></li>-->
+					 {% if session.type == "teacher" %}
+					<li><a href="{{ url_for('displaylevel') }}">Student List</a></li>
+					{%endif%}
+				  <li><a href="{{ url_for('logout') }}"> Logout</a></li>
+				  {%endif%}
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		    <!-- start soc_icons -->
+		</nav>
+
+	</div>
+</div>
+<div class="slider_bg"><!-- start slider -->
+	<div  class="container">
+			<!--#{% if session.login == "false" %}
+				<h5 align="right"><a href="{{ url_for('login') }}">Login | Register |  </a></h5>
+			#{%else%}
+				<h5 align="right"><a href="{{ url_for('logout') }}"> Logout</a></h5>
+			#{%endif%} -->
+   		<div id="da-slider" class="da-slider text-center">
+			<div class="da-slide">
+				<h2>visual Learning</h2>
+				<p>Generates the corresponding multimodal learning materials and finds other similar stories from the Internet could be of great help to both teachers and special needs children</span></p>
+				<h3 class="da-link"><a href="{{ url_for('learningmenu') }}" class="fa-btn btn-1 btn-1e">view more</a></h3>
+			</div>
+            <div class="da-slide">
+				<h2>Social Interaction Development</h2>
+				<p>a web and mobile based system to help the children to enhance their social interaction skills</span></p>
+				<h3 class="da-link"><a href="{{ url_for('social') }}" class="fa-btn btn-1 btn-1e">view more</a></h3>
+                
+			</div>
+						<div class="da-slide">
+				<h2>Behaviour Control</h2>
+				<p>Monitors activity, review repetitive behaviour or anger of a child at home or school. Emotion, expression, temperature, heart-rate and other data from sensor  are recorded to provide therapy, medical intervention  and comfort</span></p>
+				<h3 class="da-link"><a href="" class="fa-btn btn-1 btn-1e">view more</a></h3>
+			</div>
+			<div class="da-slide">
+				<h2>Activity Management</h2>
+				<p> Guide them to become independent, develop activity(sports, creativity) plan and unleash personal excellence</span></p>
+				<h3 class="da-link"><a href="" class="fa-btn btn-1 btn-1e">view more</a></h3>
+			</div>
+	   </div>
+	</div>
+</div><!-- end slider -->
+<div class="main_bg"><!-- start main -->
+	<div class="container">
+		<div class="main row">
+			<div class="col-md-3 images_1_of_4 text-center">
+				<span class="bg"><i class="fa fa-laptop"></i></span>
+				<h4><a href="#">Technology</a></h4>
+				<p class="para">TBA.</p>
+				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+			</div>
+			<div class="col-md-3 images_1_of_4 bg1 text-center">
+				<span class="bg"><i class="fa fa-globe"></i></span>
+				<h4><a href="#">Research</a></h4>
+				<p class="para">TBA</p>
+				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+			</div>
+			<div class="col-md-3 images_1_of_4 bg1 text-center">
+				<span class="bg"><i class="fa fa-cog"></i></span>
+				<h4><a href="#">Partners</a></h4>
+				<p class="para">TBA</p>
+				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+			</div>		
+			<div class="col-md-3 images_1_of_4 bg1 text-center">
+				<span class="bg"><i class="fa fa-shield"></i> </span>
+				<h4><a href="#">Testimonials</a></h4>
+				<p class="para">TBA</p>
+				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+			</div>	
+		</div>
+	</div>
+</div><!-- end main -->
+<div class="main_btm"><!-- start main_btm -->
+	<div class="container">
+		<div class="main row">
+			<div class="col-md-6 content_left">
+				<img src="{{ url_for('static', filename='images/pic1.jpg') }}" alt="" class="img-responsive">
+			</div>
+			<div class="col-md-6 content_right">
+				<h1>Who are SL-Children?				</h1>
+				<p class="para">Neurological disorders of children, such as Autism, take a long time to diagnose and to prepare developmental plan for education and support. Children with such special needs require continuous monitoring, individual development plan and supervision managed by different authorities. Their needs can be well supported by using intelligent and usable technologies. The researchers present a model of multimodal interface using intelligent algorithm, wireless sensors for diagnosis, education and support of the children. </p>
+				<a href="single-page.html" class="fa-btn btn-1 btn-1e">read more</a>
+			</div>
+		</div>
+				
+	</div>
+</div>
+<div class="footer_bg"><!-- start footer -->
+	<div class="container">
+		<div class="row  footer">
+			<div class="copy text-center">
+				<span><p class="link">&#169; All rights reserved SL-Children.org</p></span>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

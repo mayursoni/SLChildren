@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>REGISTERATION</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    	<style type="text/css">
+    		body {
+    padding-top:20px;
+}
+.container {
+    width:80%;
+}
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    /*background: #fbfbfb;*/
+}
+legend {
+   color: /*#678*/black;
+   background: darkgrey;
+   width:80%;
+}
+/*.form-control {
+    width: 95%;
+}*/
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+
+
+.control-group1{
+ text-align: center;   
+}
+label.control-label {
+ display: inline-block; 
+/* margin-left: 20px;*/
+}
+.controls.selection {
+ display: inline-block;   
+}
+label.radio {
+ display: inline-block;
+ margin-left: 20px;
+}
+.radio span {
+ padding-right: 30px;
+}
+    	</style>
+    </head>
+    <body>
+    	<div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                    <h1 class="well">Registration Form</h1>
+                </div>
+            </div>
+
+	<div class="row">
+        <div class="col-sm-12">
+            <form action="/insertteacher" method="post" id="fileForm" role="form">
+            <fieldset class="well"><legend class="text-center">Valid information is required to register. <span class="req"><small> required *</small></span></legend>
+
+            <div class="col-sm-12">
+                <div class="row">
+                    
+
+
+                    <div class="col-sm-6 form-group">    
+                <label for="name"><span class="req">* </span> Name: </label>
+                    <input class="form-control" type="text" name="name" id = "txt" placeholder=" Enter name here..." onkeyup = "Validate(this)" required /> 
+                        <div id="errFirst"></div>    
+                      </div>
+
+
+
+                     <div class="col-sm-6 form-group">
+                <label for="email"><span class="req">* </span> Email Address: </label> 
+                    <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" placeholder="Enter email address here..." />   
+                        <div class="status" id="status"></div>
+                </div>
+
+
+            
+            </div><!--row 1 closed-->
+
+
+            <div class="row">
+            <div class="col-sm-6 form-group">
+                <label for="password"><span class="req">* </span> Password: </label>
+                    <input required name="password" type="password" class="form-control inputpass" minlength="6" maxlength="10"  placeholder="Enter password here..."  id="pass1" /> 
+                    
+                </div>
+
+
+            <div class="col-sm-6 form-group">
+               
+                <label for="password"><span class="req">* </span> Password Confirm: </label>
+                    <input required name="password" type="password" class="form-control inputpass" minlength="6" maxlength="10" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
+                        <span id="confirmMessage" class="confirmMessage"></span>
+            </div>
+        </div><!--row 2 closed-->
+
+
+             
+            
+            <div class="form-group">
+            
+                <hr>
+
+                <input type="checkbox" required name="terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');" id="field_terms">   <label for="terms">I agree with the <a href="terms.php" title="You may read our terms and conditions by clicking on this link">terms and conditions</a> for Registration.</label><span class="req">* </span>
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-success" type="submit" name="submit_reg" value="Register">
+            </div>
+                                
+            </div><!--col-sm-12 closed-->
+            </fieldset>
+            </form><!-- ends register form -->
+
+            <script type="text/javascript">
+                document.getElementById("field_terms").setCustomValidity("Please indicate that you accept the Terms and Conditions");
+            </script>
+        </div><!-- ends col-12 -->
+   
+           
+
+	</div>
+</div>
+
+
+			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+		<script src="{{ url_for('static', filename='js/res2.js') }}"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	</body>
+</html>

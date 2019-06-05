@@ -1,0 +1,339 @@
+<html>
+    <head>
+        <title>Ratings</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    	<style type="text/css">
+    		body {
+    padding-top:20px;
+}
+.container {
+    width:80%;
+}
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    /*background: #fbfbfb;*/
+}
+legend {
+   color: /*#678*/black;
+   background: darkgrey;
+   width:80%;
+}
+/*.form-control {
+    width: 95%;
+}*/
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+
+
+.control-group1{
+ text-align: center;   
+}
+label.control-label {
+ display: inline-block; 
+/* margin-left: 20px;*/
+}
+.controls.selection {
+ display: inline-block;   
+}
+label.radio {
+ display: inline-block;
+ margin-left: 20px;
+}
+.radio span {
+ padding-right: 30px;
+}
+    	</style>
+    </head>
+    <body>
+    	<div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                    <h1 class="well">Enter Rating:</h1>
+                </div>
+            </div>
+
+	<div class="row">
+        <div class="col-sm-12">
+            <form action="/insertrating" method="post" id="fileForm" role="form">
+            <fieldset class="well"><legend class="text-center">Provide proper rating. <span class="req"><small> required *</small></span></legend>
+
+            <div class="col-sm-12">
+                <div class="row">
+                    
+
+
+                   <!-- <div class="col-sm-6 form-group">
+                <label for="name"><span class="req">* </span> Name: </label>
+                    <input class="form-control" type="text" name="name" id = "txt" placeholder=" Enter name here..." onkeyup = "Validate(this)" required /> 
+                        <div id="errFirst"></div>    
+                      </div>
+-->
+
+
+                     <div class="col-sm-6 form-group">
+                         <label for="email"><span class="req">* </span> Email Address: </label>
+                        <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" placeholder="Enter email address here..." />
+                        <div class="status" id="status"></div>
+                     </div>
+
+
+            </div><!--row 1 closed-->
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+
+                                <div class="control-group">
+                                  <label class="control-label" ><span class="req">* </span> Listening:</label>
+                                  <div class="controls">
+                                    <label class="radio inline" for="radios-0">
+                                      <input type="radio" name="radios1" id="radios-0" value="1" onkeyup="ratingvalidate1();">
+                                      <span>1</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-1">
+                                      <input type="radio" name="radios1" id="radios-1" value="2" onkeyup="ratingvalidate1();">
+                                      <span>2</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-2">
+                                      <input type="radio" name="radios1" id="radios-2" value="3" onkeyup="ratingvalidate1();">
+                                      <span>3</span>
+                                    </label>
+                                      <label class="radio inline" for="radios-3">
+                                      <input type="radio" name="radios1" id="radios-3" value="4" onkeyup="ratingvalidate1();">
+                                      <span>4</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-4">
+                                      <input type="radio" name="radios1" id="radios-4" value="5" onkeyup="ratingvalidate1();">
+                                      <span>5</span>
+                                    </label>
+                                    <div class="statusGender" id="statusRating1"></div>
+                                  </div>
+                                </div>
+
+                    </div>
+                </div><!--row closed-->
+
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+
+                                <div class="control-group">
+                                  <label class="control-label" ><span class="req">* </span> Reading:</label>
+                                  <div class="controls">
+                                    <label class="radio inline" for="radios-0">
+                                      <input type="radio" name="radios2" id="radios-5" value="1" onkeyup="ratingvalidate2();">
+                                      <span>1</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-1">
+                                      <input type="radio" name="radios2" id="radios-6" value="2" onkeyup="gendervalidate();">
+                                      <span>2</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-2">
+                                      <input type="radio" name="radios2" id="radios-7" value="3" onkeyup="gendervalidate();">
+                                      <span>3</span>
+                                    </label>
+                                      <label class="radio inline" for="radios-3">
+                                      <input type="radio" name="radios2" id="radios-8" value="4" onkeyup="gendervalidate();">
+                                      <span>4</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-4">
+                                      <input type="radio" name="radios2" id="radios-9" value="5" onkeyup="gendervalidate();">
+                                      <span>5</span>
+                                    </label>
+                                    <div class="statusGender" id="statusGender2"></div>
+                                  </div>
+                                </div>
+
+                    </div>
+                </div><!--row closed-->
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+
+                                <div class="control-group">
+                                  <label class="control-label" ><span class="req">* </span> Speaking:</label>
+                                  <div class="controls">
+                                    <label class="radio inline" for="radios-0">
+                                      <input type="radio" name="radios3" id="radios-10" value="1" onkeyup="gendervalidate();">
+                                      <span>1</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-1">
+                                      <input type="radio" name="radios3" id="radios-11" value="2" onkeyup="gendervalidate();">
+                                      <span>2</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-2">
+                                      <input type="radio" name="radios3" id="radios-12" value="3" onkeyup="gendervalidate();">
+                                      <span>3</span>
+                                    </label>
+                                      <label class="radio inline" for="radios-3">
+                                      <input type="radio" name="radios3" id="radios-13" value="4" onkeyup="gendervalidate();">
+                                      <span>4</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-4">
+                                      <input type="radio" name="radios3" id="radios-14" value="5" onkeyup="gendervalidate();">
+                                      <span>5</span>
+                                    </label>
+                                    <div class="statusGender" id="statusGender3"></div>
+                                  </div>
+                                </div>
+
+                    </div>
+                </div><!--row closed-->
+
+
+
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+
+                                <div class="control-group">
+                                  <label class="control-label" ><span class="req">* </span> Writing:</label>
+                                  <div class="controls">
+                                    <label class="radio inline" for="radios-0">
+                                      <input type="radio" name="radios4" id="radios-15" value="1" onkeyup="gendervalidate();">
+                                      <span>1</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-1">
+                                      <input type="radio" name="radios4" id="radios-16" value="2" onkeyup="gendervalidate();">
+                                      <span>2</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-2">
+                                      <input type="radio" name="radios4" id="radios-17" value="3" onkeyup="gendervalidate();">
+                                      <span>3</span>
+                                    </label>
+                                      <label class="radio inline" for="radios-3">
+                                      <input type="radio" name="radios4" id="radios-18" value="4" onkeyup="gendervalidate();">
+                                      <span>4</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-4">
+                                      <input type="radio" name="radios4" id="radios-19" value="5" onkeyup="gendervalidate();">
+                                      <span>5</span>
+                                    </label>
+                                    <div class="statusGender" id="statusGender4"></div>
+                                  </div>
+                                </div>
+
+                    </div>
+                </div><!--row closed-->
+
+
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+
+                                <div class="control-group">
+                                  <label class="control-label" ><span class="req">* </span> Disability:</label>
+                                  <div class="controls">
+                                    <label class="radio inline" for="radios-0">
+                                      <input type="radio" name="radios5" id="radios-20" value="1" onkeyup="gendervalidate();">
+                                      <span>1</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-1">
+                                      <input type="radio" name="radios5" id="radios-21" value="2" onkeyup="gendervalidate();">
+                                      <span>2</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-2">
+                                      <input type="radio" name="radios5" id="radios-22" value="3" onkeyup="gendervalidate();">
+                                      <span>3</span>
+                                    </label>
+                                      <label class="radio inline" for="radios-3">
+                                      <input type="radio" name="radios5" id="radios-23" value="4" onkeyup="gendervalidate();">
+                                      <span>4</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-4">
+                                      <input type="radio" name="radios5" id="radios-24" value="5" onkeyup="gendervalidate();">
+                                      <span>5</span>
+                                    </label>
+                                    <div class="statusGender" id="statusGender5"></div>
+                                  </div>
+                                </div>
+
+                    </div>
+                </div><!--row closed-->
+
+
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+
+                                <div class="control-group">
+                                  <label class="control-label"><span class="req">* </span> Mobility:</label>
+                                  <div class="controls">
+                                    <label class="radio inline" for="radios-0">
+                                      <input type="radio" name="radios6" id="radios-25" value="1" onkeyup="gendervalidate();">
+                                      <span>1</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-1">
+                                      <input type="radio" name="radios6" id="radios-26" value="2" onkeyup="gendervalidate();">
+                                      <span>2</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-2">
+                                      <input type="radio" name="radios6" id="radios-27" value="3" onkeyup="gendervalidate();">
+                                      <span>3</span>
+                                    </label>
+                                      <label class="radio inline" for="radios-3">
+                                      <input type="radio" name="radios6" id="radios-28" value="4" onkeyup="gendervalidate();">
+                                      <span>4</span>
+                                    </label>
+                                    <label class="radio inline" for="radios-4">
+                                      <input type="radio" name="radios6" id="radios-29" value="5" onkeyup="gendervalidate();">
+                                      <span>5</span>
+                                    </label>
+                                    <div class="statusGender" id="statusGender6"></div>
+                                  </div>
+                                </div>
+
+                    </div>
+                </div><!--row closed-->
+
+
+
+
+
+
+
+             
+            
+
+
+            <div class="form-group">
+                <input class="btn btn-success col-lg-2" type="submit" name="submit_reg" value="Submit">
+            </div>
+                                
+            </div><!--col-sm-12 closed-->
+            </fieldset>
+            </form><!-- ends register form -->
+
+
+        </div><!-- ends col-12 -->
+   
+           
+
+	</div>
+</div>
+
+
+			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+		<script src="{{ url_for('static', filename='js/res2.js') }}"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	</body>
+</html>
