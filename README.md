@@ -1,4 +1,6 @@
 # SLChildren
+Technology: python multilayer perceptron code for learning level detection,front end using flask and bootstrap,video search through YOUTUBEAPI.
+
 Personalized learning material for students with special needs using machine learning.
 
 Its a website that help austism children to learn from internet and test their learning using puzzle.
